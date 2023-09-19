@@ -1,6 +1,18 @@
 console.log("Завдання: 9 ==============================");
 
 function task9() {
+  function fetchWithError() {
+    const errorMessage = "Помилка при з'єднанні з сервером";
+    return Promise.reject(errorMessage);
+  }
+
+  fetchWithError()
+    .then((data) => {
+      console.log("Дані успішно отримані:", data);
+    })
+    .catch((error) => {
+      console.error("Помилка при запиті до сервера:", error);
+    });
   // Створюємо функцію fetchWithError, яка симулює помилку при запиті до сервера.
   // Створюємо константу errorMessage в яку записуємо рядок "Помилка при з'єднанні з сервером"
   // Використовуємо Promise.reject(errorMessage) для створення вже відхиленого промісу.
@@ -11,3 +23,4 @@ function task9() {
 
 // Викликаємо функцію task10
 task9();
+
